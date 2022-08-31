@@ -26,11 +26,11 @@ def extract_news(url):
     #local object only for extracting news
     content = response.content
     soup = BeautifulSoup(content, 'html.parser')
-    for i ,tag in enumerate(soup.find_all('div',attrs={'class':'o-teaser__content','o-teaser__meta':''})):
+    for i ,tag in enumerate(soup.find_all('div',attrs={'class':'o-teaser__heading','o-teaser__meta':''})):
         cnt += ((str(i+1)+' :: '+tag.text+ "\n" + '<br>') if tag.text!='More' else'')
     return (cnt)
 
-    cnt = extract_news('https://news.ycombinator.com/')
+    cnt = extract_news('https://www.ft.com/todaysnewspaper/')
     content += cnt
     content += ('<br>-------<br>')
     content += ('<br><br>End of message')
