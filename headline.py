@@ -34,3 +34,27 @@ def extract_news(url):
     content += cnt
     content += ('<br>-------<br>')
     content += ('<br><br>End of message')
+
+
+##Sending email
+
+print ('Composing email ...')
+
+#update email adress
+SERVER = 'smtp.gmail.com'
+PORT = 587
+FROM = "jolieaurelius@gmail.com"
+TO = "jolieaurelius@gmail.com"
+PASS = "test"
+
+#message body
+msg = MIMEMultipart ()
+
+msg['Subject']  = 'Financial times headlines ' + '' +str(now.day) + '-' + str(now.month) + '-' + str(
+    now.year) 
+msg ['From'] = FROM
+msg ['To'] = TO
+
+msg.attach(MIMEText(content,'html'))
+
+print ('Ínitiating server ......')
