@@ -26,11 +26,11 @@ def extract_news(url):
     #local object only for extracting news
     content = response.content
     soup = BeautifulSoup(content, 'html.parser')
-    for i ,tag in enumerate(soup.find_all('div',attrs={'class':'o-teaser__heading','o-teaser__meta':''})):
+    for i ,tag in enumerate(soup.find_all('div',attrs={'class':'','o-teaser-collection__item':''})):
         cnt += ((str(i+1)+' :: '+tag.text+ "\n" + '<br>') if tag.text!='More' else'')
     return (cnt)
 
-    cnt = extract_news('https://www.ft.com/todaysnewspaper/')
+    cnt = extract_news('https://www.ft.com/technology/')
     content += cnt
     content += ('<br>-------<br>')
     content += ('<br><br>End of message')
@@ -41,11 +41,11 @@ def extract_news(url):
 print ('Composing email ...')
 
 #update email adress
-SERVER = 'smtp.gmail.com'
+SERVER = 'smtp.office365.com'
 PORT = 587
-FROM = "jolieaurelius@gmail.com"
-TO = "jolieaurelius@gmail.com"
-PASS = "test"
+FROM = "jolieaurelius@outlook.com"
+TO = "jolieaurelius@outlook.com"
+PASS = "Duckduck123"
 
 #message body
 msg = MIMEMultipart ()
@@ -58,3 +58,14 @@ msg ['To'] = TO
 msg.attach(MIMEText(content,'html'))
 
 print ('Ínitiating server ......')
+
+server = smtplib.SMTP(SERVER, PORT)
+server.set_debuglevel(1)
+server.ehlo()
+server.starttls()
+server.login(FROM, PASS)
+server.sendmail(FROM,TO, msg.as_string())
+
+print('Email sent ....')
+
+server.quit()
