@@ -50,8 +50,8 @@ print ('Composing email ...')
 #update email adress
 SERVER = 'smtp.office365.com'
 PORT = 587
-# FROM = 
-# TO = 
+FROM = "jolieaurelius@outlook.com"
+TO = "setrodinomof@outlook.com"
 PASS = "Duckduck123"
 
 #message body
