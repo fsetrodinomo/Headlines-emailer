@@ -37,45 +37,45 @@ def extract_jobs(url) :
         location_element = job_element.find("p", class_="location")
         return (job_element,title_element,company_element,location_element)
 
-    cnt = extract_jobs('https://realpython.github.io/fake-jobs/')
-    content += cnt
-    content += ('<br>-------<br>')
-    content += ('<br><br>End of message')
+#     cnt = extract_jobs('https://realpython.github.io/fake-jobs/')
+#     content += cnt
+#     content += ('<br>-------<br>')
+#     content += ('<br><br>End of message')
 
 
-##Sending email
+# ##Sending email
 
-print ('Composing email ...')
+# print ('Composing email ...')
 
-#update email adress
-SERVER = 'smtp.office365.com'
-PORT = 587
-FROM = "jolieaurelius@outlook.com"
-TO = "setrodinomof@outlook.com"
-PASS = "Duckduck123"
+# #update email adress
+# SERVER = 'smtp.office365.com'
+# PORT = 587
+# FROM = "jolieaurelius@outlook.com"
+# TO = "setrodinomof@outlook.com"
+# PASS = "Duckduck123"
 
-#message body
-msg = MIMEMultipart ()
+# #message body
+# msg = MIMEMultipart ()
 
-msg['Subject']  = 'Jobs in python ' + '' +str(now.day) + '-' + str(now.month) + '-' + str(
-    now.year) 
-msg ['From'] = FROM
-msg ['To'] = TO
+# msg['Subject']  = 'Jobs in python ' + '' +str(now.day) + '-' + str(now.month) + '-' + str(
+#     now.year) 
+# msg ['From'] = FROM
+# msg ['To'] = TO
 
-msg.attach(MIMEText(content,'html'))
+# msg.attach(MIMEText(content,'html'))
 
-print ('Ínitiating server ......')
+# print ('Ínitiating server ......')
 
-server = smtplib.SMTP(SERVER, PORT)
-server.set_debuglevel(1)
-server.ehlo()
-server.starttls()
-server.login(FROM, PASS)
-server.sendmail(FROM,TO, msg.as_string())
+# server = smtplib.SMTP(SERVER, PORT)
+# server.set_debuglevel(1)
+# server.ehlo()
+# server.starttls()
+# server.login(FROM, PASS)
+# server.sendmail(FROM,TO, msg.as_string())
 
-print('Email sent ....')
+# print('Email sent ....')
 
-server.quit()
+# server.quit()
     
 
 
