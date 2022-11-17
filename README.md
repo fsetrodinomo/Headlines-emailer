@@ -1,14 +1,28 @@
 # Scraping jobs
 Scraping jobs is a script used for helping the user to find the right job.
 
-# Installation
+# Run script
 <b> Requirement: </b> <br>
 This projects requires to have Python installed on your computer.
 If you don't have Python installed check the documentation :
 https://docs.python.org/3/using/index.html
-```bash
+
+### Clone project 
+```python
 git clone https://github.com/fsetrodinomo/ScrapingJobs
 ```
+
+### Go to directory
+```python
+cd ScrapingJobs
+```
+
+### Run script
+```python
+python pyscrape.py
+```
+
+
 
 # Breakdown code
 ### How do you get the text from the website ?
