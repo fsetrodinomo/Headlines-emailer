@@ -11,9 +11,9 @@ git clone https://github.com/fsetrodinomo/ScrapingJobs
 ```
 
 # Breakdown code
-### What is BeautifullSoup ? How do you get the text from the website ?
-There are 2 packages used. Requests and BeautifullSoup. If you want to get the data from a website you need a HTTP requests, simplified:A request which help you to create a request and a response. In this case the content of the website https://realpython.github.io/fake-jobs/.
-BeautifullSoup helps to get the content of the website and turn it into HTML. At L6 you can decide from which div tag you want to select your information.
+### How do you get the text from the website ?
+There are 2 packages used. Requests and BeautifulSoup. If you want to get the data from a website you need a HTTP requests, simplified:A request which help you to create a request and a response. In this case the content of the website https://realpython.github.io/fake-jobs/.
+BeautifulSoup helps to get the content of the website and turn it into HTML. At L6 you can decide from which div tag you want to select your information.
 
 <i>If you would open the page , click on your right mouse button and select 'Inspect' you can see the structure of a website. The divs consist out of smaller divs and the more you click through the divs the more specific the information of the divs get. </i>
 
