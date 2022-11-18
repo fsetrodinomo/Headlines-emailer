@@ -38,11 +38,8 @@ L2  from bs4 import BeautifulSoup
 #scraping website html 
 L3  URL = "https://realpython.github.io/fake-jobs/"
 L4  page = requests.get(URL)
-
-L5  soup = BeautifulSoup(page.content, "html.parser")
-
+L5  soup = BeautifulSoup(page.content, "html.parser"
 L6  results = soup.find(id="ResultsContainer")
-
 L7  print(page.text)
 ```
 
